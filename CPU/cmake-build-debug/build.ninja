@@ -51,13 +51,13 @@ build cmake_object_order_depends_target_CPU: phony || CMakeFiles/CPU.dir
 
 build CMakeFiles/CPU.dir/main.cpp.o: CXX_COMPILER__CPU_Debug /home/deepam/Desktop/SEM$ 6/CSE560$ -$ GPU$ Computing/Clustering-algorithms-on-GPU/CPU/main.cpp || cmake_object_order_depends_target_CPU
   DEP_FILE = CMakeFiles/CPU.dir/main.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always -fopenmp
+  FLAGS = -march=native -g -fdiagnostics-color=always -fopenmp
   OBJECT_DIR = CMakeFiles/CPU.dir
   OBJECT_FILE_DIR = CMakeFiles/CPU.dir
 
 build CMakeFiles/CPU.dir/cpu.cpp.o: CXX_COMPILER__CPU_Debug /home/deepam/Desktop/SEM$ 6/CSE560$ -$ GPU$ Computing/Clustering-algorithms-on-GPU/CPU/cpu.cpp || cmake_object_order_depends_target_CPU
   DEP_FILE = CMakeFiles/CPU.dir/cpu.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always -fopenmp
+  FLAGS = -march=native -g -fdiagnostics-color=always -fopenmp
   OBJECT_DIR = CMakeFiles/CPU.dir
   OBJECT_FILE_DIR = CMakeFiles/CPU.dir
 
@@ -70,7 +70,7 @@ build CMakeFiles/CPU.dir/cpu.cpp.o: CXX_COMPILER__CPU_Debug /home/deepam/Desktop
 # Link the executable CPU
 
 build CPU: CXX_EXECUTABLE_LINKER__CPU_Debug CMakeFiles/CPU.dir/main.cpp.o CMakeFiles/CPU.dir/cpu.cpp.o | /usr/lib/libgomp.so /usr/lib/libpthread.a
-  FLAGS = -g
+  FLAGS = -march=native -g
   LINK_LIBRARIES = /usr/lib/libgomp.so  /usr/lib/libpthread.a
   OBJECT_DIR = CMakeFiles/CPU.dir
   POST_BUILD = :

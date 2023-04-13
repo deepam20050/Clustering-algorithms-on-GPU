@@ -9,6 +9,7 @@
 #include <chrono>
 #include <array>
 #include <cstdio>
+#include <queue>
 #include "omp.h"
 
 using namespace std;
@@ -95,4 +96,59 @@ vector < point > cluster_cpu::K_Means_OpenMP (int K, int NoOfIterations) {
   auto otime = omp_get_wtime();
   printf("%.9lf\n", otime - itime);
   return means[(NoOfIterations - 1) & 1];
+}
+
+void cluster_cpu::build_r_tree() {
+  for (int i = 0; i < N; ++i) {
+    auto x = data[i].real(), y = data[i].imag();
+    rtree.insert({Point(x, y, 0), i});
+  }
+}
+
+queue < int > cluster_cpu::spatial_query (float x, float y, float eps) {
+  Point searchMin(x - eps, y - eps, -eps);
+  Point searchMax(x + eps, y + eps, +eps);
+  bg::model::box<Point> searchBox(searchMin, searchMax);
+  vector < Value > results;
+  rtree.query(bgi::intersects(searchBox), back_inserter(results));
+  queue < int > indices;
+  for (int i = 0; i < static_cast<int>(indices.size()); ++i) {
+    indices.emplace(results[i].second);
+  }
+  return indices;
+}
+
+vector < int > cluster_cpu::DBSCAN(float eps, int minPts) {
+  int cluster_cnt = 0;
+  vector < int > label(N, -1);
+  for (int i = 0; i < N; ++i) {
+    if (label[i] > 0) continue;
+    auto neighbours = spatial_query(data[i].real(), data[i].imag(), eps);
+    if (static_cast<int>(neighbours.size()) < minPts) {
+      label[i] = NOISE;
+      continue;
+    }
+    ++cluster_cnt;
+    label[i] = cluster_cnt;
+    while (!neighbours.empty()) {
+      int u = neighbours.front();
+      neighbours.pop();
+      if (label[u] == NOISE) {
+        label[u] = cluster_cnt;
+        continue;
+      } else if (label[u] == -1) {
+        continue;
+      }
+      label[u] = cluster_cnt;
+      auto new_neighbours = spatial_query(data[u].real(), data[u].imag(), eps);
+      if (static_cast<int>(new_neighbours.size()) >= minPts) {
+        while (!new_neighbours.empty()) {
+          int x = new_neighbours.front();
+          new_neighbours.pop();
+          neighbours.emplace(x);
+        }
+      }
+    }
+  }
+  return label;
 }
