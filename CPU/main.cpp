@@ -9,10 +9,10 @@ int main () {
   for (int i = 0; i <= 8; ++i) {
     string f = base + string(1, i + '0') + ".csv";
     auto data = read_csv(f);
-//    auto Rtree = build_r_tree(data);
-//    auto [a, label] = DBSCAN(0.0375, 4, Rtree, data);
-    auto [t, label] = run_K_Means(4, 1000, data);
-    auto o = base2 + "kmeans-" + string(1, i + '0') + ".csv";
+    auto Rtree = build_r_tree(data);
+    auto [a, label] = DBSCAN(0.0375, 4, Rtree, data);
+//    auto [t, label] = run_K_Means(4, 1000, data);
+    auto o = base2 + "dbscan-" + string(1, i + '0') + ".csv";
     write_csv(data, label, o);
   }
   return 0;

@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-s = "kmeans-"
+s = "dbscan-"
 
 for i in range(0, 9):
     data = s + str(i) + ".csv"
