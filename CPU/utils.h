@@ -2,21 +2,14 @@
 // Created by deepam on 10/4/23.
 //
 
-#ifndef CPU_CSV_PARSER_H
-#define CPU_CSV_PARSER_H
+#ifndef CPU_UTILS_H
+#define CPU_UTILS_H
 
-#include <complex>
-#include <vector>
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <cassert>
+#include "includes.h"
 
 using namespace std;
 
-using point = complex < float >;
-
-vector < point > csv_parser (const string& filename) {
+vector < point > read_csv (const string& filename) {
   vector < point > data;
   ifstream file(filename);
   string line;
@@ -25,13 +18,23 @@ vector < point > csv_parser (const string& filename) {
     stringstream ss(line);
     string value;
     float x, y;
-    for (int i = 0; i < 2 && getline(ss, value, ';'); ++i) {
+    for (int i = 0; i < 2 && getline(ss, value, ','); ++i) {
       float f = stof(value);
       i == 0 ? x = f : y = f;
     }
     data.emplace_back(x, y);
   }
-  return data;
+  return ::move(data);
 }
 
-#endif //CPU_CSV_PARSER_H
+void write_csv (const points &data, const vector < int > &label, const string &filename) {
+  ofstream csv(filename);
+  csv << "x,y,label\n";
+  const int N = static_cast < int > (data.size());
+  for (int i = 0; i < N; ++i) {
+    csv << data[i].real() << "," << data[i].imag() << "," << label[i] << '\n';
+  }
+  csv.close();
+}
+
+#endif //CPU_UTILS_H
