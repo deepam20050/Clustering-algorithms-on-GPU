@@ -13,7 +13,7 @@ pair < double, vector < int > > run_K_Means (int K, int NoOfIterations, const po
   double start_t = omp_get_wtime();
   mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
   const int N = static_cast < int > (data.size());
-  std::uniform_int_distribution<int> indices(0, N - 1);
+  uniform_int_distribution<int> indices(0, N - 1);
   array < vector < point >, 2 > means({vector< point > (K), vector < point > (K)});
   generate(means[0].begin(), means[0].end(), [&indices, &rng, &data] () {
       return data[indices(rng)];

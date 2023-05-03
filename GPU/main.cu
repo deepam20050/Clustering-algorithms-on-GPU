@@ -10,7 +10,6 @@ int main () {
     string f = base + string(1, i + '0') + ".csv";
     auto [h_x, h_y] = read_csv(f);
     auto [t, label] = run_K_Means(h_x, h_y, 4, 1000);
-    cout << *max(label.begin(), label.end()) << '\n';
     auto o = base2 + "kmeans-" + string(1, i + '0') + ".csv";
     write_csv(h_x, h_y, label, o);
   }
