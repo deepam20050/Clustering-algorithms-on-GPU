@@ -6,6 +6,7 @@
 #define CPU_BENCHMARK_H
 
 #include "includes.h"
+#include "meanshift.h"
 #include "cpu.h"
 
 using namespace std;

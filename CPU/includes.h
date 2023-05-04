@@ -9,7 +9,9 @@
 #include <iostream>
 #include <complex>
 #include <string>
+#include <algorithm>
 #include <fstream>
+#include <parallel/algorithm>
 #include <cassert>
 #include <random>
 #include <utility>

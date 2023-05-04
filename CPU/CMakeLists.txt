@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
 
-add_executable(CPU main.cpp cpu.h utils.h includes.h benchmark.h)
+add_executable(CPU main.cpp cpu.h utils.h includes.h benchmark.h meanshift.h)
 
 find_package(OpenMP REQUIRED)
 
