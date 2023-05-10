@@ -1,4 +1,0 @@
-/home/deepam/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/deepam/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/ninja/linux/x64/ninja -G Ninja -S "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/Clustering-algorithms-on-GPU/CPU" -B "/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/Clustering-algorithms-on-GPU/CPU/cmake-build-debug"
--- Configuring done
--- Generating done
--- Build files have been written to: /home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/Clustering-algorithms-on-GPU/CPU/cmake-build-debug

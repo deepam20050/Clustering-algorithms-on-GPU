@@ -10,6 +10,7 @@
 #include <complex>
 #include <string>
 #include <algorithm>
+#include <chrono>
 #include <fstream>
 #include <parallel/algorithm>
 #include <cassert>

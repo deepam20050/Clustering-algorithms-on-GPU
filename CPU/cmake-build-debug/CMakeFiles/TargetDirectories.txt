@@ -1,3 +1,0 @@
-/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/Clustering-algorithms-on-GPU/CPU/cmake-build-debug/CMakeFiles/CPU.dir
-/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/Clustering-algorithms-on-GPU/CPU/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/deepam/Desktop/SEM 6/CSE560 - GPU Computing/Clustering-algorithms-on-GPU/CPU/cmake-build-debug/CMakeFiles/rebuild_cache.dir

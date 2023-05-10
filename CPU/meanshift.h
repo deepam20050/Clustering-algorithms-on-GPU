@@ -20,14 +20,14 @@ float gaussian_kernel (const point &a, const point &b) {
 pair < double, vector < int > > run_Mean_Shift (const int &NoOfIterations, const points &data) {
   const int N = static_cast<int>(data.size());
   points a[2] = {data, points(N)};
+  double start_t = omp_get_wtime();
   for (int iter = 1; iter <= NoOfIterations; ++iter) {
     int idx = iter & 1;
     int prev = idx ^ 1;
-#pragma omp parallel for default(none) shared(prev, iter, a, idx, data, N)
+#pragma omp parallel for default(none) shared(prev, iter, a, idx, data)
     for (int i = 0; i < N; ++i) {
       float net_weight = 0.0f;
       point mean = {0.0f, 0.0f};
-//#pragma omp parallel for default(none) shared(prev, iter, prev, a, idx, data, N)
       for (int j = 0; j < N; ++j) {
         auto w = gaussian_kernel(a[prev][i], a[prev][j]);
         net_weight += w;
@@ -46,13 +46,12 @@ pair < double, vector < int > > run_Mean_Shift (const int &NoOfIterations, const
   __gnu_parallel::sort(means.begin(), means.end());
   means.resize(unique(means.begin(), means.end()) - means.begin());
   vector < int > labels(N);
-#pragma omp parallel for default(none) shared(means, labels, means_ori, N)
+#pragma omp parallel for default(none) shared(means, labels, means_ori)
   for (int i = 0; i < N; ++i) {
     labels[i] = static_cast < int > (lower_bound(means.begin(), means.end(), means_ori[i]) - means.begin());
   }
-  float msecs = 0.0f;
-  return {msecs, labels};
-//  return {0.0f, vector < int > (N)};
+  auto end_t = omp_get_wtime();
+  return {(end_t - start_t) * 1000.0, labels};
 }
 
 #endif //CPU_MEANSHIFT_H

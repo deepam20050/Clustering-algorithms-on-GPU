@@ -22,35 +22,21 @@
   <component name="ChangeListManager">
     <list default="true" id="9cca4186-f791-4601-a009-addc91609fd8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/dbscan-0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/dbscan-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/dbscan-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/dbscan-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/dbscan-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/dbscan-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/dbscan-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/dbscan-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/dbscan-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/kmeans-0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/kmeans-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/kmeans-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/kmeans-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/kmeans-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/kmeans-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/kmeans-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/kmeans-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/kmeans-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plotting/plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmark.h" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CPU" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CPU" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanshift.h" beforeDir="false" afterPath="$PROJECT_DIR$/meanshift.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../GPU/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/benchmark.cuh" beforeDir="false" afterPath="$PROJECT_DIR$/../GPU/benchmark.cuh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-56ebb0aca02d6d85b3c9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-8633dc7f2bbf4acf7718.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/cmake-build-debug/.cmake/api/v1/reply/index-2023-05-03T08-47-39-0036.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/cmake-build-debug/.cmake/api/v1/reply/target-GPU-Debug-df5362685b53f6d7fd45.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../GPU/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../GPU/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../GPU/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GPU/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../GPU/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../GPU/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/gpu.cuh" beforeDir="false" afterPath="$PROJECT_DIR$/../GPU/kmeans.cuh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GPU/includes.cuh" beforeDir="false" afterPath="$PROJECT_DIR$/../GPU/includes.cuh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,11 +88,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -128,6 +109,8 @@
       <workItem from="1682445193245" duration="1000" />
       <workItem from="1683103643749" duration="19000" />
       <workItem from="1683192264863" duration="6729000" />
+      <workItem from="1683559745602" duration="28000" />
+      <workItem from="1683568636122" duration="1055000" />
     </task>
     <servers />
   </component>

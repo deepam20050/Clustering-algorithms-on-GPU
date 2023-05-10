@@ -21,7 +21,7 @@ pair < double, vector < int > > run_K_Means (int K, int NoOfIterations, const po
   vector < int > cluster(N);
   vector < int > counts(K);
   for (int iter = 0; iter < NoOfIterations; ++iter) {
-#pragma omp parallel for default(none) shared(means, iter, K, cluster, data, N)
+#pragma omp parallel for default(none) shared(means, iter, K, cluster, data)
     for (int i = 0; i < N; ++i) {
       float nearest_distance = numeric_limits < float >::max();
       int cluster_id = 0;
@@ -50,7 +50,7 @@ pair < double, vector < int > > run_K_Means (int K, int NoOfIterations, const po
       means[(iter & 1) ^ 1][k] /= point(c, 0.0f);
     }
   }
-#pragma omp parallel for default(none) shared(means, K, cluster, data, NoOfIterations, N)
+#pragma omp parallel for default(none) shared(means, K, cluster, data, NoOfIterations)
   for (int i = 0; i < N; ++i) {
     float nearest_distance = numeric_limits < float >::max();
     int cluster_id = 0;
@@ -71,7 +71,7 @@ pair < double, vector < int > > run_K_Means (int K, int NoOfIterations, const po
 RTree build_r_tree(const points &data) {
   const int N = static_cast<int>(data.size());
   vector < Value > values(N);
-#pragma omp parallel for default(none) shared(values, data, N)
+#pragma omp parallel for default(none) shared(values, data)
   for (int i = 0; i < N; ++i) {
     values[i] = {{data[i].real(), data[i].imag()}, i};
   }

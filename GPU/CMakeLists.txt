@@ -3,7 +3,7 @@ project(GPU CUDA)
 
 set(CMAKE_CUDA_STANDARD 17)
 
-add_executable(GPU main.cu includes.cuh benchmark.cuh gpu.cuh utils.cuh)
+add_executable(GPU main.cu includes.cuh benchmark.cuh kmeans.cuh utils.cuh dbscan.cuh)
 
 set_target_properties(GPU PROPERTIES
         CUDA_SEPARABLE_COMPILATION ON)
